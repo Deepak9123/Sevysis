@@ -54,8 +54,8 @@ const processFormData = (event) => {
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
 
-    // Redirect to dashboard or appropriate page after successful login
-    window.location.href = 'dashboard.html';
+    // Redirect to index or appropriate page after successful login
+    window.location.href = 'index.html';
 };
 
 // Event listeners
