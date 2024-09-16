@@ -1,6 +1,4 @@
 Sevysis Website
-  <div class="info"><label>Name:</label><span>${fullname.value}</span></div>
-        <div class="info"><label>Email:</label><span>${email.value}</span></div>
-        <div class="info"><label>Number:</label><span>${number.value}</span></div>
-        <div class="info"><label>Subject:</label><span>${subject.value}</span></div>
-        <div class="info"><label>Message:</label><span>${msg.value}</span></div>
+This repository is dedicated to the development and management of Sevysis' internal tools and systems. 
+It includes code, documentation, and resources that support our mission of delivering innovative solutions in enterprise software and services. 
+Contributions and updates will focus on enhancing product efficiency, scalability, and security.
