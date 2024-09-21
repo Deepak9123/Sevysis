@@ -57,122 +57,152 @@
       </header>
       <div class="modal fade" id="enquiryModal" tabindex="-1" role="dialog" aria-labelledby="enquiryModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <!-- Spinner Loader -->
-          <div id="spinner" class="spinner"></div>
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+            <div id="spinner" class="spinner"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enquiryModalLabel">Enquiry Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Enquiry Form -->
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <label for="Name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email Id</label>
+                            <input type="text" class="form-control" id="email" placeholder="Enter email id" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone No.</label>
+                            <div class="input-group">
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone Number" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" placeholder="Enter a message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <div id="spinner" class="spinner" style="display: none;"></div>
+                </div>
             </div>
-            <div class="modal-body">
-              <!-- Enquiry Form -->
-              <form id="enquiryForm">
-                <div class="form-group">
-                  <label for="Name">Full Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Full Name" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="Email">Email Id</label>
-                  <input type="text" class="form-control" id="email" placeholder="Enter email id" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone No.</label>
-                  <div class="input-group">
-                      <input type="tel" class="form-control" id="phone" placeholder="Phone Number" autocomplete="off">
-                  </div>
-              </div>
-                <div class="form-group">
-                  <label for="Subject">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Enter Subject" autocomplete="off">
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea class="form-control" id="message" placeholder="Enter a message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-              <!-- Spinner Loader -->
-              <div id="spinner" class="spinner" style="display: none;"></div>
-            </div>
-          </div>
         </div>
-      </div>
-      <script src="build/js/intlTelInput.js"></script>
+    </div>
     
-      <script>
-        
-        var input = document.querySelector("#phone")
+    <script src="build/js/intlTelInput.js"></script>
+    
+    <script>
+        // Initialize international telephone input
+        var input = document.querySelector("#phone");
         window.intlTelInput(input, {});
     
-        
-        document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          document.getElementById('spinner').style.display = 'block';
-          
-          var name = document.getElementById('name').value;
-          var email = document.getElementById('email').value;
-          var subject = document.getElementById('subject').value;
-          var message = document.getElementById('message').value;
-      
-        
-          fetch('demo.html')
-            .then(response => response.text())
-            .then(template => {
-              
-              var htmlContent = template.replace('{{name}}', name).replace('{{subject}}', subject);
-      
+        // Function to close the enquiry modal
+        function closeEnquiryModal() {
+            const modal = document.querySelector('#enquiryModal');
+            if (modal) {
+                $(modal).modal('hide'); // Use Bootstrap's modal hide method
+            }
+        }
+    
+        // Function to show success popup
+        function showSuccessPopup(message) {
+            // Create popup elements
+            const popup = document.createElement('div');
+            popup.className = 'success-popup';
+            popup.innerHTML = `
+                <div class="success-popup-content">
+                    <p>${message}</p>
+                    <button onclick="closeSuccessPopup()">Close</button>
+                </div>
+            `;
+    
+            // Add popup styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .success-popup {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1050; /* Make sure this is above the Bootstrap modal z-index */
+                }
+                .success-popup-content {
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    text-align: center;
+                }
+                .success-popup button {
+                    margin-top: 10px;
+                    padding: 5px 10px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+            `;
+    
+            // Append popup and styles to body
+            document.head.appendChild(style);
+            document.body.appendChild(popup);
+        }
+    
+        // Function to close success popup
+        function closeSuccessPopup() {
+            const popup = document.querySelector('.success-popup');
+            if (popup) {
+                popup.remove();
+            }
+        }
+    
+        // Form submission
+        document.getElementById('enquiryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
             
-              var formData = new FormData();
-          formData.append('from', 'prathamesh.184054@gmail.com');    
-          formData.append('SecureToken', '4b985981-407c-4986-b5f6-735991b38e12'); 
-          formData.append('fromName', 'Sevysis');
-          formData.append('apikey', 'BF2B8DE0C177FA38135E9EA0A2A426954A64D81301A47F48E5B65A1D384524618D1177BFE97188601956C106E136AB6B'); // Replace with your actual API key
-          formData.append('subject', subject);
-          formData.append('to', email);
-          formData.append('Authentication', true);
-          formData.append('bodyHtml', htmlContent); 
-          formData.append('isTransactional', true); 
-          formData.append('secure', true);
-          formData.append('spam', false);
-          
-        
-             
-              return fetch('https://api.elasticemail.com/v2/email/send', {
-                method: 'POST',
-                body: formData
-              });
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success) {
-                
-                document.getElementById('spinner').style.display = 'none';
-                Swal.fire({
-                  title: "Success!",
-                  text: "Enquiry sent successfully!",
-                  icon: "success"
-                }).then((result) => {
-          if (result.value) {
-            window.location.href = 'index.html';
-          }
-        });
-      
-              } else {
-                document.getElementById('spinner').style.display = 'none';
-                Swal.fire({
-                  title: "Error!",
-                  text: "There was an issue sending the Enquiry. Please try again.",
-                  icon: "error"
+            // Show spinner
+            document.getElementById('spinner').style.display = 'block';
+    
+            // Prepare the template parameters
+            var templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+    
+            // Send email using EmailJS
+            emailjs.send('service_vrmytjb', 'template_7k7344j', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    closeEnquiryModal(); // Close the enquiry form
+                    showSuccessPopup('Your message has been sent successfully!'); // Show success popup
+                    document.getElementById('enquiryForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to send the message. Please try again later.');
+                })
+                .finally(function() {
+                    // Hide spinner
+                    document.getElementById('spinner').style.display = 'none';
                 });
-              }
-            })
-            .catch(error => {
-              console.error('Error:', error);
-            });
         });
-      </script>
+    </script>
     <section class="bullet">
         <div class="container">
             <h1 class="text font-weight-bold text-center ">HRMS Solutions</h1>
