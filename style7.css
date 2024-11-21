@@ -48,10 +48,10 @@ header {
 
 .logo1 {
   position: relative;
-  width: 220px;
-  height: 112px;
-  right: 80px;
-  bottom: 12px;
+  width: 130px;
+  height: 95px;
+  right: 50px;
+  bottom: 15px;
   /* Removed negative top and left values */
   opacity: 0; /* Start with logo hidden */
   animation: fadeIn 1.9s ease-in forwards;

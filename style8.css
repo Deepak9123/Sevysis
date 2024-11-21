@@ -350,10 +350,10 @@ body {
   }
   .logo1 {
     position: relative;
-    width: 200px;
-    height: 102px;
-    right: 80px;
-    bottom: 8px;
+    width: 130px;
+  height: 95px;
+  right: 50px;
+  bottom: 15px;
     /* Removed negative top and left values */
     opacity: 0; /* Start with logo hidden */
     animation: fadeIn 1.9s ease-in forwards;
