@@ -19,7 +19,7 @@ header {
     width: 100%; /* Ensure it spans the full width */
     background-color: rgb(1, 1, 1);
     height: 85px;
-    padding: 2px 85px;
+    padding: 3px 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,10 +47,10 @@ header {
   
   .logo1 {
     position: relative;
-    width: 130px;
-    height: 95px;
-    right: 50px;
-    bottom: 15px;
+    width: 160px;
+    height: 110px;
+    right: 85px;
+    bottom: 10px;
     /* Removed negative top and left values */
     opacity: 0; /* Start with logo hidden */
     animation: fadeIn 1.9s ease-in forwards;
@@ -58,15 +58,25 @@ header {
   
   nav {
     position: relative;
-    display: inline;
+    display: flex;
+    justify-content: end;
+    gap: 2.5rem;
     width: auto; /* Adjusted to auto to prevent overflow */
-    left: 11.5rem;
-    bottom: 75px;
+    left: 5rem;
+    bottom: 85px;
+    background: linear-gradient(45deg,#000000,#333,#022041,#000000);
+    padding-right: 1rem;
+  }
+  .enquiry-wrapper {
+    position: absolute;
+    right: 1px;
+    top: 23.5%; 
+    transform: translateY(-50%);
   }
   
   .dropdown {
-    right: 10px;
-    bottom: 3.5px;
+    right: 30px;
+    bottom: 5.5px;
     font-size: 20px;
     height: 100%;
     transition: 0.1s ease;
@@ -74,9 +84,8 @@ header {
   .dropdown-menu {
     position: fixed;
     width: 201.5%; /* Adjusted to auto to prevent overflow */
-    height: 300%; /* Adjusted to auto to prevent overflow */
-    border-radius: 10px;
-  
+    height: 350%; /* Adjusted to auto to prevent overflow */
+    border-radius: 10px; 
     color: #ff4d3b;
   }
   .dropdown-menu a:hover {
@@ -92,15 +101,23 @@ header {
   
   nav a {
     position: relative;
-    font-size: 22px;
+    font-size: 18px;
     color: #fff;
     font-weight: 500;
-    text-decoration: none;
+
     margin-left: 40px;
+    top: 15px;
+    justify-content: space-between;
+    overflow: hidden; /* Add this line */
   }
+  nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+  
   nav a:hover {
     text-decoration: none;
-    color: #1087ff;
+    color: #ffbf10;
   }
   
   nav a:hover::before {
@@ -110,7 +127,7 @@ header {
     left: 0;
     height: 3px;
     width: 100%;
-    background-color: transparent;
+    background-color: #ffbf10;
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;

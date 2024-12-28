@@ -46,23 +46,36 @@ header {
 
 .logo1 {
   position: relative;
-  width: 120px;
-  height: 95px;
+  width: 160px;
+  height: 110px;
   right: 50px;
-  bottom: 15px;
+  bottom: 10px;
   /* Removed negative top and left values */
   opacity: 0; /* Start with logo hidden */
   animation: fadeIn 1.9s ease-in forwards;
 }
 
+.enquiry-wrapper {
+  position: absolute;
+  right: 45px; /* Adjust this value as needed */
+  top: 20%; 
+  transform: translateY(-50%);
+}
 
+.nav {
+  position: relative; /* Ensure the parent has relative positioning */
+}
 
 nav {
   position: relative;
-  display: inline;
+  display: flex;
+  justify-content: end;
+  gap: 3rem;
   width: auto; /* Adjusted to auto to prevent overflow */
   left: 7rem;
-  bottom: 85px;
+  bottom: 95px;
+  background: linear-gradient(45deg,#000000,#333,#022041,#000000);
+  padding-right: 2rem;
  
 }
 #chatbot-toggle-btn {
@@ -313,7 +326,7 @@ content: url("Icon.png");
 }
 
 .dropdown {
-  right: 10px;
+  right: 40px;
   bottom: 7.3px;
   font-size: 20px;
   height: 100%;
@@ -341,16 +354,23 @@ nav button {
 
 nav a {
   position: relative;
-  font-size: 22px;
+  font-size: 18px;
   color: #fff;
   font-weight: 500;
   margin-left: 40px;
   overflow: hidden; /* Add this line */
+  top: 20px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+nav ul{
+  display: flex;
+  gap: 2rem;
 }
 
 nav a:hover {
   text-decoration: none;
-  color: #1087ff;
+  color: #ffbf10;
 }
 
 nav a:hover::before {
@@ -360,7 +380,7 @@ nav a:hover::before {
   left: 0;
   height: 3px;
   width: 100%;
-  background-color: #f50d0d;
+  background-color: #ffbf10;
   -webkit-transition: 0.1s;
   -o-transition: 0.1s;
   transition: 0.1s;
