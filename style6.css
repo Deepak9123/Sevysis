@@ -89,7 +89,16 @@ body {
 .container .login-social a i {
     margin-right: 5px;
 }
-
+.enquiry-wrapper {
+    position: absolute;
+    right: 45px; /* Adjust this value as needed */
+    top: 20%; 
+    transform: translateY(-50%);
+  }
+  
+  .nav {
+    position: relative; /* Ensure the parent has relative positioning */
+  }
 .container .login-social a.facebook {
     background: #4267B2;
 }

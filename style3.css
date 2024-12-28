@@ -202,7 +202,16 @@ body {
     color: #f91919;
   }
 
-
+  .enquiry-wrapper {
+    position: absolute;
+    right: 45px; /* Adjust this value as needed */
+    top: 20%; 
+    transform: translateY(-50%);
+  }
+  
+  .nav {
+    position: relative; /* Ensure the parent has relative positioning */
+  }
 .login-register-text {
     color: #111;
     font-weight: 600;

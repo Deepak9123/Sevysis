@@ -40,6 +40,16 @@ body {
    color: rgb(255, 255, 255);
 
   }
+  .enquiry-wrapper {
+    position: absolute;
+    right: 65px; /* Adjust this value as needed */
+    top: 20%; 
+    transform: translateY(-50%);
+  }
+  
+  .nav {
+    position: relative; /* Ensure the parent has relative positioning */
+  }
   
   @-webkit-keyframes fadeIn {
     from {
@@ -350,10 +360,10 @@ body {
   }
   .logo1 {
     position: relative;
-    width: 130px;
-  height: 95px;
+    width: 160px;
+  height: 110px;
   right: 50px;
-  bottom: 15px;
+  bottom: 10px;
     /* Removed negative top and left values */
     opacity: 0; /* Start with logo hidden */
     animation: fadeIn 1.9s ease-in forwards;
@@ -361,15 +371,18 @@ body {
   
   nav {
     position: relative;
-    display: inline;
+    display: flex;
+    justify-content: end;
     width: auto; /* Adjusted to auto to prevent overflow */
-    left: 7rem;
-    bottom: 75px;
+    left: 8rem;
+    bottom: 95px;
+    background: linear-gradient(45deg,#000000,#333,#022041,#000000);
+    padding-right: 8.5rem;
   }
   
   .dropdown {
-    right: 10px;
-    bottom: 7.3px;
+    right: 18px;
+    bottom: 8px;
     font-size: 20px;
     height: 100%;
     transition: 0.1s ease;
@@ -407,15 +420,22 @@ body {
   
   nav a {
     position: relative;
-    font-size: 22px;
+    font-size: 18px;
     color: #fff;
     font-weight: 500;
-    text-decoration: none;
+
     margin-left: 40px;
+    top: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  nav ul{
+    text-decoration: none;
+    color: #ffbf10;
   }
   nav a:hover {
     text-decoration: none;
-    color: #1087ff;
+    color: #ffbf10;
   }
   
   nav a:hover::before {
@@ -425,7 +445,7 @@ body {
     left: 0;
     height: 3px;
     width: 100%;
-    background-color:#f50d0d;
+    background-color:#ffbf10;
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
