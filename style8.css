@@ -42,10 +42,15 @@ body {
   }
   .enquiry-wrapper {
     position: absolute;
-    right: 65px; /* Adjust this value as needed */
+    right: 115px; /* Adjust this value as needed */
     top: 20%; 
     transform: translateY(-50%);
   }
+  .bullet li{
+    color:rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(-50%);
+}
   
   .nav {
     position: relative; /* Ensure the parent has relative positioning */
@@ -377,11 +382,11 @@ body {
     left: 8rem;
     bottom: 95px;
     background: linear-gradient(45deg,#000000,#333,#022041,#000000);
-    padding-right: 8.5rem;
+    padding-right: 12rem;
   }
   
   .dropdown {
-    right: 18px;
+    right: 10px;
     bottom: 8px;
     font-size: 20px;
     height: 100%;

@@ -65,17 +65,17 @@ header {
     left: 5rem;
     bottom: 85px;
     background: linear-gradient(45deg,#000000,#333,#022041,#000000);
-    padding-right: 1rem;
+    padding-right: 12rem;
   }
   .enquiry-wrapper {
     position: absolute;
-    right: 1px;
+    right: 70px;
     top: 23.5%; 
     transform: translateY(-50%);
   }
   
   .dropdown {
-    right: 30px;
+    right: 20px;
     bottom: 5.5px;
     font-size: 20px;
     height: 100%;
@@ -546,7 +546,7 @@ svg {
 }
 
 .slider-control.inactive:hover {
-  cursor: auto;
+  cursor: pointer;
 }
 .slider-control:not(.inactive):hover {
   opacity: 1;
