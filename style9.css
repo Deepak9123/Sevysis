@@ -49,7 +49,7 @@ header {
     position: relative;
     width: 160px;
     height: 110px;
-    right: 85px;
+    right: 90px;
     bottom: 10px;
     /* Removed negative top and left values */
     opacity: 0; /* Start with logo hidden */
@@ -65,17 +65,17 @@ header {
     left: 5rem;
     bottom: 85px;
     background: linear-gradient(45deg,#000000,#333,#022041,#000000);
-    padding-right: 1rem;
+    padding-right: 12rem;
   }
   .enquiry-wrapper {
     position: absolute;
-    right: 1px;
+    right: 70px;
     top: 23.5%; 
     transform: translateY(-50%);
   }
   
   .dropdown {
-    right: 30px;
+    right: 20px;
     bottom: 5.5px;
     font-size: 20px;
     height: 100%;
@@ -86,10 +86,10 @@ header {
     width: 201.5%; /* Adjusted to auto to prevent overflow */
     height: 350%; /* Adjusted to auto to prevent overflow */
     border-radius: 10px; 
-    color: #ff4d3b;
+    color: #ffbf10;
   }
   .dropdown-menu a:hover {
-    color: rgb(16, 63, 253);
+    color: #ffbf10;
   }
   nav button {
     position: fixed;
@@ -546,7 +546,7 @@ svg {
 }
 
 .slider-control.inactive:hover {
-  cursor: auto;
+  cursor: pointer;
 }
 .slider-control:not(.inactive):hover {
   opacity: 1;

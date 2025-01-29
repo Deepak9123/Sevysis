@@ -48,7 +48,7 @@ header {
   position: relative;
   width: 160px;
   height: 110px;
-  right: 50px;
+  right: 90px;
   bottom: 10px;
   /* Removed negative top and left values */
   opacity: 0; /* Start with logo hidden */
@@ -60,8 +60,11 @@ header {
   right: 45px; /* Adjust this value as needed */
   top: 20%; 
   transform: translateY(-50%);
+  padding-right: 150px;
 }
-
+#Home{
+  left: 7rem;
+  }
 .nav {
   position: relative; /* Ensure the parent has relative positioning */
 }
@@ -70,9 +73,9 @@ nav {
   position: relative;
   display: flex;
   justify-content: end;
-  gap: 3rem;
+  gap: 1rem;
   width: auto; /* Adjusted to auto to prevent overflow */
-  left: 7rem;
+  left: 10rem;
   bottom: 95px;
   background: linear-gradient(45deg,#000000,#333,#022041,#000000);
   padding-right: 2rem;
@@ -326,22 +329,22 @@ content: url("Icon.png");
 }
 
 .dropdown {
-  right: 40px;
-  bottom: 7.3px;
+  right: 190px;
+  bottom: 8px;
   font-size: 20px;
   height: 100%;
   transition: 0.1s ease;
 }
 .dropdown-menu {
   position: fixed;
-  width: 195.5%; /* Adjusted to auto to prevent overflow */
-  height: 292%; /* Adjusted to auto to prevent overflow */
+  width: 150.5%; /* Adjusted to auto to prevent overflow */
+  height: 325%; /* Adjusted to auto to prevent overflow */
   border-radius: 10px;
 
-  color: #ff4d3b;
+  color: #ffbf10;
 }
 .dropdown-menu a:hover {
-  color: rgb(16, 63, 253);
+  color: #ffbf10;
 }
 
 nav button {
@@ -357,7 +360,8 @@ nav a {
   font-size: 18px;
   color: #fff;
   font-weight: 500;
-  margin-left: 40px;
+  margin-left: 120px;
+  padding-left:30px;
   overflow: hidden; /* Add this line */
   top: 20px;
   justify-content: space-between;
