@@ -5,6 +5,8 @@
   margin-bottom: 0;
   bottom: 0;
   padding: 0;
+  
+  // Ensures padding and border are included in the element's total width and height
 }
 
 body
@@ -28,7 +30,9 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  text-decoration: none;  
+  text-decoration: none;
+ 
+  
 }
 .clearfix::after {
   content: "";
@@ -52,17 +56,22 @@ header {
   height: 112px;
   right: 80px;
   bottom: 12px;
-  opacity: 0; 
+  /* Removed negative top and left values */
+  opacity: 0; /* Start with logo hidden */
   animation: fadeIn 1.9s ease-in forwards;
 }
+
+
+
 nav {
   position: relative;
   display: inline;
-  width: auto; 
+  width: auto; /* Adjusted to auto to prevent overflow */
   left: 5rem;
   bottom: 85px;
  
 }
+
 .dropdown {
   right: 10px;
   bottom: 7.3px;
@@ -73,8 +82,8 @@ nav {
 }
 .dropdown-menu {
   position: fixed;
-  width: 196.5%; 
-  height: 287%; 
+  width: 196.5%; /* Adjusted to auto to prevent overflow */
+  height: 287%; /* Adjusted to auto to prevent overflow */
   border-radius: 10px;
   text-decoration: none;
 
@@ -115,252 +124,6 @@ nav a:hover {
   text-decoration: none;
   color: #1087ff;
 }
-#chatbot-toggle-btn {
-  position: fixed;
-  height: 50px;
-  bottom: 23px;
-  right: 20px;
-  padding: 12px 10px;
-  border: none;
-  background-color: #1087ff;
-  color: #fff;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-#chatbot-toggle-btn:hover {
-  background-color: #0074cc;
-}
-.chat-header span:hover{
-  color: #ffffff;
-}
-.chatbot-popup {
-  display: none;
-  position: fixed;
-  bottom: 10px;
-  right: 150px;
-  width: 500px;
-  height: 550px;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  background-color: #fff;
-  transition: height 0.3s ease;
-}
-.chat-header {
-  background-color: #1087ff;
-  color: #fff;
-  padding: 15px 20px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-#close-btn {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
-.chat-box {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: calc(100% - 120px);
-  overflow-y: auto;
-}
-.suggestions-container {
-  width: 200px;
-  border-right: 1px solid #ddd;
-
-  height: 100%;
-  padding: 0 10px;
-}
-
-.suggestion {
-  background-color: #fff;
-  border: 1.3px solid #1087ff;
-  padding: 5px 10px;
-  border-radius: 3px;
-  margin: 6px 0;
-  display: block;
-  width: calc(115% - 20px);
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 0.8em;
-  text-align: center;
-}
-
-.message-container {
-  flex-grow: 1;
-  padding: 0 10px;
-}
-
-.message-container {
-  flex-grow: 1;
-  overflow-y: auto;
-  height: 100%;
-}
-.chat-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 10px 20px;
-  border-top: 1px solid #ddd;
-}
-#user-input {
-  font-family: "Poppins";
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  outline: none;
-}
-#send-btn {
-  font-family: "Poppins", sans-serif;
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  background-color: #1087ff;
-  color: #fff;
-  border-radius: 12px;
-  margin-left: 10px;
-  cursor: pointer;
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-#send-btn:hover {
-  background-color: #0074cc;
-}
-.user-message {
-  background-color: #f3f3f3;
-  color: #333;
-  padding: 8px;
-  border-radius: 15px;
-  margin: 15px 30px;
-  position: relative;
-  display: block;
-  max-width: 80%;
-  font-size: 1em;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-.user-message::before {
-  content: "\1F468";
-  position: absolute;
-  bottom: -12px;
-  right: -10px;
-  left: -30px;
-  margin-bottom: 7px;
-  font-size: 16px;
-  background-color: #1087ff;
-  color: #fff;
-  border-radius: 50%;
-  width: 27px;
-  height: 27px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-.bot-message {
-  background-color: #10ff8f;
-  color: #000000;
-  padding: 8px;
-  border-radius: 15px;
-  margin: 10px 30px;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  margin-right: 10px;
-  position: relative;
-  display: block;
-  max-width: 80%;
-  font-size: 0.9em;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-.bot-message::before {
-content: url("Icon.png");
-  position: absolute;
-  bottom: 6px;
-  right: -19px;
-  left: -21px;
-  margin-bottom: 4px;
-  font-size: 16px;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 50%;
-  width: 2px;
-  height: 1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-.button-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-.button-container button {
-  padding: 10px 50px;
-  border: none;
-  background-color: #1087ff;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-}
-.button-container button:hover {
-  background-color: #0074cc;
-}
 
 nav a:hover::before {
   content: "";
@@ -376,16 +139,16 @@ nav a:hover::before {
 }
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
-  border-top: 8px solid #2c07fd; 
+  border-top: 8px solid #2c07fd; /* Blue color */
   border-radius: 50%;
-  width: 100px; 
-  height: 100px; 
-  position: fixed; 
-  top: 40%; 
-  left: 45%; 
+  width: 100px; /* Increased size */
+  height: 100px; /* Increased size */
+  position: fixed; /* Fixed position */
+  top: 40%; /* Center vertically */
+  left: 45%; /* Center horizontally */
   transform: translate(-50%, -50%);
-  z-index: 1050;
-  display: none; 
+  z-index: 1050; /* Ensure it's above modal */
+  display: none; /* Hide by default */
   animation: spin 1s infinite linear, flicker 1.5s infinite;
 }
 
@@ -399,11 +162,15 @@ nav a:hover::before {
   50% { opacity: 0.5; }
 }
 
-$bg-gradient: linear-gradient(151deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+$bg-gradient: linear-gradient(151deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+
 .slider__wrapper {
   overflow: hidden;
 background-position: center;
 background-size: cover;
+ 
+
 }
 .modal-bodyt,
 .modal-headert,
@@ -421,6 +188,11 @@ background-size: cover;
 .modal-body #phone {
   width: 467px;
 }
+.span-right{
+  position: relative;
+  bottom: 30px;
+  text-align:right ;
+}
 .slider__content {
   display: flex !important;
   padding: 10px;
@@ -431,6 +203,9 @@ background-size: cover;
   position: relative;
   color: #000000;
  
+
+
+
   .slider__text {
    
     transition: all 1s ease;
@@ -465,8 +240,8 @@ background-size: cover;
       font-weight: 600;
       font-size: 38px;
       color: #fff;
-      display: block; 
-      text-align: center; 
+      display: block; // Changed from inline-block to block
+      text-align: center; // Added to center the text
       margin-bottom: 0;
     
       &:after {
@@ -474,8 +249,8 @@ background-size: cover;
         width:80%;
         height: 6px;
         display: block;
-        margin-left: auto; 
-        margin-right: auto; 
+        margin-left: auto; // Added to center the content
+        margin-right: auto; // Added to center the content
         background: $bg-gradient;
       }
       
@@ -486,47 +261,53 @@ background-size: cover;
       font-weight: 600;
       align-items: center;
       text-align: center;
-      line-height: 1.3;
+      line-height: 1.3; // Reduced line height
       color: #000000;
-      background-color: rgba(255, 255, 255, 0.3); 
-      backdrop-filter: blur(5px); 
+      background-color: rgba(255, 255, 255, 0.3); // Semi-transparent background
+      backdrop-filter: blur(5px); // Reduced blur intensity to 5px
     
-      width: 80%; 
-      margin: 0 auto; 
-      padding: 10px; 
+      width: 80%; // Adjust the width as needed
+      margin: 0 auto; // Center the paragraph horizontally
+      padding: 10px; // Adjust padding to reduce height
     }
     
 
   }
 
- 
+  // Define a mixin for the blur effect
 @mixin blur-background($blur-amount) {
   filter: blur($blur-amount);
-  -webkit-filter: blur($blur-amount);
+  -webkit-filter: blur($blur-amount); // For Safari 6.0 to 9.0
 }
+
+// Your existing .slider__image class
 .slider__image {
   width: 100%;
-  height: 100vh; 
+  height: 100vh; // Make sure the container spans the full viewport height
   position: relative;
-  margin: 0; 
-  overflow: hidden;
+  margin: 0; // Remove margin to fill the entire viewport
+  overflow: hidden; // Hide any overflow
 
   &:before {
     content: "";
     display: block;
-    padding-top: 56.25%;
+    padding-top: 56.25%; // Maintain aspect ratio (16:9 in this case)
   }
 
   img {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    border-radius: 0; 
+    object-fit: cover; // Cover the entire container without stretching
+    border-radius: 0; // Optional: remove if you want sharp corners
     transition: all .75s ease;
+
+    // Add the blur effect to the image
     @include blur-background(4px);
   }
-}  
+}
+
+  
 }
 
 .slider__dots {
@@ -550,6 +331,10 @@ background-size: cover;
 .dot.active {
   background-color: rgba(255, 255, 255, 0.9);
 }
+
+
+//arrows 
+
 .slick-arrow {
   position: absolute;
   top: 31em;
@@ -563,6 +348,10 @@ background-size: cover;
   text-indent: -9999px;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   cursor: pointer;
+
+
+  
+
   &.slick-prev {
     right: 5em;
     transform: rotate(-90deg);
@@ -574,6 +363,7 @@ background-size: cover;
   }
 }
 
+//animation 
 
 .slick-active {
   .slider__text {
@@ -587,81 +377,6 @@ background-size: cover;
 
 footer {
   width: 100%;
-  padding: 20px 0; 
-  margin-top: auto;
-}
-a.ib-mob, a.ib-mob:hover {
-  color: unset;
-  text-decoration: none;
-}
-@media screen and (max-width: 768px) {
-  .slider__dots{
-    display: flex;
-    top: 35.3rem;
-    
-}
-  header{
-    display: flex;
-  }
-  nav{
-     
-    display: flex;
-  }
-  nav a{
-    font-size: 13px;
-    font-weight: 600;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .modal-body #phone {
-    width: 467px;
-  }
-  .dropdown{
-     display: flex;
-    padding: 3px;
- 
-  }
-  .dropdown-menu{
-    display: flex;
-    position: fixed;
-   width: 14rem;
-  }
-  .ib-address{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  footer {
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  
-}
-@media screen and (max-width: 768px) {
-  .slider__wrapper {
-    height: 600px; 
-  }
-  
-  .slider__content {
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center;
-    width: 100%; 
-    
-    .slider__text {
-      padding: 1.3rem; 
-      top: 4.5rem;
-      left: 6.5rem;
-      text-align: center; 
-      width: 30rem;
-      h2 {
-        font-size: 24px;
-      }
-      
-      p {
-        font-size: 13.8px;
-      }
-     
-    }
-  }
+  padding: 20px 0; // Adjust padding as necessary
+  margin-top: auto; // This helps to push the footer to the bottom if using flexbox on the parent container
 }

@@ -1,9 +1,15 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
 
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-     box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
