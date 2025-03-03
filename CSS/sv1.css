@@ -19,6 +19,7 @@ body {
  position: relative;
  display: block;
  margin-top: 10%;
+    /* Shadow effect */
   }
   .bullet p{
     font-weight: 700;
@@ -64,23 +65,23 @@ body {
     color: #fbfbfb;
     font-size: 40px;
     font-weight: 600;
-    opacity: 0; 
+    opacity: 0; /* Start with h4 text hidden */
     -webkit-animation: fadeIn 1.5s ease-in forwards;
-    animation: fadeIn 1.5s ease-in forwards; 
+    animation: fadeIn 1.5s ease-in forwards; /* Apply the animation */
   }
   
   header {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    position: fixed; /* Changed from relative to fixed */
+    top: 0; /* Align the navbar to the top */
+    left: 0; /* Align the navbar to the left */
+    width: 100%; /* Ensure it spans the full width */
     background-color: rgb(1, 1, 1);
     height: 85px;
     padding: 2px 85px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000; 
+    z-index: 1000; /* Increase z-index to ensure it's above other elements */
     text-decoration: none;
   }
   
@@ -108,14 +109,15 @@ body {
     height: 102px;
     right: 80px;
     bottom: 8px;
-    opacity: 0; 
+    /* Removed negative top and left values */
+    opacity: 0; /* Start with logo hidden */
     animation: fadeIn 1.9s ease-in forwards;
   }
   
   nav {
     position: relative;
     display: inline;
-    width: auto; 
+    width: auto; /* Adjusted to auto to prevent overflow */
     left: 7rem;
     bottom: 75px;
   }
@@ -129,8 +131,8 @@ body {
   }
   .dropdown-menu {
     position: fixed;
-    width: 195.5%;
-    height: 292%; 
+    width: 195.5%; /* Adjusted to auto to prevent overflow */
+    height: 292%; /* Adjusted to auto to prevent overflow */
     border-radius: 10px;
 
   }
@@ -208,16 +210,16 @@ body {
 }
   .spinner {
     border: 8px solid rgba(0, 0, 0, 0.1);
-    border-top: 8px solid #2c07fd; 
+    border-top: 8px solid #2c07fd; /* Blue color */
     border-radius: 50%;
-    width: 100px; 
-    height: 100px; 
-    position: fixed; 
-    top: 40%; 
-    left: 45%; 
+    width: 100px; /* Increased size */
+    height: 100px; /* Increased size */
+    position: fixed; /* Fixed position */
+    top: 40%; /* Center vertically */
+    left: 45%; /* Center horizontally */
     transform: translate(-50%, -50%);
-    z-index: 1050; 
-    display: none;
+    z-index: 1050; /* Ensure it's above modal */
+    display: none; /* Hide by default */
     animation: spin 1s infinite linear, flicker 1.5s infinite;
   }
   
@@ -230,11 +232,14 @@ body {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
   }
+  /* Adjust the modal backdrop opacity */
   .modal-backdrop.show {
-    opacity: 0.5;
+    opacity: 0.5; /* You can change this value to make it lighter */
   }
+  
+  /* Ensure the modal is on top of other content */
   .modal {
-    z-index: 1050; 
+    z-index: 1050; /* Standard z-index for Bootstrap modals */
   }
   
   
