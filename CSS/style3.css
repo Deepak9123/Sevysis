@@ -1,3 +1,11 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
 
 * {
     margin: 0;
@@ -194,16 +202,7 @@ body {
     color: #f91919;
   }
 
-  .enquiry-wrapper {
-    position: absolute;
-    right: 45px;
-    top: 20%; 
-    transform: translateY(-50%);
-  }
-  
-  .nav {
-    position: relative; 
-  }
+
 .login-register-text {
     color: #111;
     font-weight: 600;
