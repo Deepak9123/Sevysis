@@ -96,7 +96,7 @@ nav {
   transition: 0.1s ease;
 }
 .dropdown-menu {
-  position: fixed;
+  position: absolute;
   width: 195.5%; /* Adjusted to auto to prevent overflow */
   height: 292%; /* Adjusted to auto to prevent overflow */
   border-radius: 10px;
@@ -778,6 +778,12 @@ content: url("/Icon.png");
 .indicator-label1 {
   display: block;
   font-size: 1em;
+}
+.education-content {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: black !important; /* Ensure text is visible */
 }
 
 
