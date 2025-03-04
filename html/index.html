@@ -2,21 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
   <meta name="viewport" content="width=device-width, initial-scale=0.6">
   <head>
-  <link rel="shortcut icon" href="../images/favicon (2).ico" type="x-icon">
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest"> -->
-
+  <link rel="shortcut icon" href="../Assets/images/favicon (2).ico" type="x-icon">
   <link rel="stylesheet" href="../css/style2.css">
-
-  <link rel="stylesheet" href="build/css/demo.css">
-  <link rel="stylesheet" href="build/css/intlTelInput.css">
- 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
   integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -49,59 +39,40 @@
     <script type="text/javascript">
       (function () {
         emailjs.init({
-          publicKey: "CmNUoBgCx9Rhq6QQy", // Replace 'YOUR_PUBLIC_KEY' with your actual user ID from EmailJS
+          publicKey: "CmNUoBgCx9Rhq6QQy", 
         });
       })();
     </script>
 
 </head>
-
 <body>
- 
-  
   <header class="header">
     <div class="logo2">
-      <a href="./index.html"><img class="logo1" src="../images/logo1.jpg">
+      <a href="./index.html"><img class="logo1" src="../Assets/images/logo1.jpg">
       </a>
     </div>
-
-    <nav class="nav">
+  <nav class="nav">
       <ul>
-
-        <a href="index.html">Home</a>
-        <a href="#about" id="about">About</a>
-        <!-- <a class="text-justify" href="../html/contact.html">Find Us</a> -->
-         <a href="./html/contact.html">Find Us</a>
-      
-      </ul>
-      <div class="dropdown">
-        <li class="navbar-text dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Services
-          </a>
-          <div class="dropdown-menu p-8 " aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item-text pl-0" href="../html/education.html">Education Management</a>
-            <a class="dropdown-item-text pl-0" href="../html/index1.html">Hospital & Pathlab Solution</a>
-            <a class="dropdown-item-text pl-0" href="../html/index2.html">Design & Development</a>
-            <a class="dropdown-item-text pl-0" href="../html/index3.html">HRMS Solution</a>
-
-          </div>
-      
-        
-         
-        
-      </li>
-    </div>
-    <div class="enquiry-wrapper">
-      <a class="enq" href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a>
-      </div>
-
-
-        <!-- <button class="navbar-btn btn btn-danger" onclick="logout()">Logout</button> -->
-
-      
-    </nav>
+        <li> <a href="./index.html">Home</a></li>
+         <li><a href="../html/contact.html">Find Us</a></li>
+        <li><a href="../html/LearnMore.html">Learn More</a></li>  
+        </ul>
+        <div class="dropdown">
+          <li class="services">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu p-8" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item-text pl-0" href="./education.html">Education Management</a>
+              <a class="dropdown-item-text pl-0" href="../html/index1.html">Hospital & Pathlab Solution</a>
+              <a class="dropdown-item-text pl-0" href="../html/index2.html">Design & Development</a>
+              <a class="dropdown-item-text pl-0" href="../html/index3.html">HRMS Solution</a>
+            </div>
+          </li>
+        </div>
+        <div class="enquiry-wrapper">
+          <li><a class="enq" href="#" data-toggle="modal" data-target="#enquiryModal">Enquiry</a></li>
+            </div>
+ </nav>
   </header>
   <div class="modal fade" id="enquiryModal" tabindex="-1" role="dialog" aria-labelledby="enquiryModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -114,7 +85,6 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Enquiry Form -->
                 <form id="enquiryForm">
                     <div class="form-group">
                         <label for="Name">Full Name</label>
@@ -149,21 +119,15 @@
 <script src="build/js/intlTelInput.js"></script>
 
 <script>
-    // Initialize international telephone input
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {});
-
-    // Function to close the enquiry modal
     function closeEnquiryModal() {
         const modal = document.querySelector('#enquiryModal');
         if (modal) {
-            $(modal).modal('hide'); // Use Bootstrap's modal hide method
+            $(modal).modal('hide'); 
         }
     }
-
-    // Function to show success popup
     function showSuccessPopup(message) {
-        // Create popup elements
         const popup = document.createElement('div');
         popup.className = 'success-popup';
         popup.innerHTML = `
@@ -172,8 +136,6 @@
                 <button onclick="closeSuccessPopup()">Close</button>
             </div>
         `;
-
-        // Add popup styles
         const style = document.createElement('style');
         style.textContent = `
             .success-popup {
@@ -204,28 +166,18 @@
                 cursor: pointer;
             }
         `;
-
-        // Append popup and styles to body
         document.head.appendChild(style);
         document.body.appendChild(popup);
     }
-
-    // Function to close success popup
     function closeSuccessPopup() {
         const popup = document.querySelector('.success-popup');
         if (popup) {
             popup.remove();
         }
     }
-
-    // Form submission
     document.getElementById('enquiryForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        
-        // Show spinner
         document.getElementById('spinner').style.display = 'block';
-
-        // Prepare the template parameters
         var templateParams = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
@@ -233,9 +185,7 @@
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         };
-
-        // Send email using EmailJS
-        emailjs.send('service_vrmytjb', 'template_7k7344j', templateParams)
+ emailjs.send('service_vrmytjb', 'template_7k7344j', templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 closeEnquiryModal(); // Close the enquiry form
@@ -246,13 +196,11 @@
                 alert('Failed to send the message. Please try again later.');
             })
             .finally(function() {
-                // Hide spinner
                 document.getElementById('spinner').style.display = 'none';
             });
     });
 </script>
-
-  <section class="carousal">
+ <section class="carousal">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3800">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -261,19 +209,19 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../images/pexels-huseyn-kamaladdin-667838.jpg" class="d-block img-fluid" alt="...">
+          <img src="../Assets/images/pexels-huseyn-kamaladdin-667838.jpg" class="d-block img-fluid" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h4>Our primary areas of competence are business intelligence, technology, and developing web and mobile applications.</h4>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../images/5206 .jpg" class="d-block img-fluid" alt="...">
+          <img src="../Assets/images/5206 .jpg" class="d-block img-fluid" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h4 class="text-dark">Our expertise is in providing services for mobile app development, CMS, and web development, among other things.</h4>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../images/pexels-max-vakhtbovycn-7750123.jpg" class="d-block img-fluid" alt="...">
+          <img src="../Assets/images/pexels-max-vakhtbovycn-7750123.jpg" class="d-block img-fluid" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h4 class="text-white" >We believe innovation and collective knowledge can transform all our futures with greater purpose.</h4>
           </div>
@@ -289,9 +237,6 @@
       </button>
     </div>
   </section>
-  
-
-
   <button id="chatbot-toggle-btn"><p>Chat with us!</p></button>
   <div class="chatbot-popup" id="chatbot-popup" style="display: none;">
     <div class="chat-header">
@@ -300,10 +245,8 @@
     </div>
     <div class="chat-box">
       <div class="suggestions-container" id="suggestions-container">
-      
       </div>
-      <div class="message-container" id="message-container">
-        
+      <div class="message-container" id="message-container">  
       </div>
     </div>
     <div class="chat-input">
@@ -314,7 +257,6 @@
       <a class="text-decoration-none" href="https://www.sevysis.in" target="_blank">Build By Sevysis © 2024</a>
     </div>
   </div>
-    <!-- Section About -->
   <section id="about" class="about-us">
     <h1>ABOUT </h1>
     <p>Seyysis is an IT services, consulting, and business solutions organization that has been partnering with many businesses for the past few years. We believe innovation and collective knowledge can transform all 
@@ -323,7 +265,6 @@
     <p>Our expertise spans a variety of fields including education, ATS, food, and healthcare. We deliver top-notch IT solutions, helping businesses grow by leveraging the latest platforms and technologies.</p>
     <button class="cta-button">Explore Our Services</button>
   </section>
-
 <section>
     <div class="vision">
       <h1>Vision & Mission</h1>
@@ -331,7 +272,6 @@
         He inspires the power and energy to get it
         done</p>
     </div>
-
     <div class="mission">
       <div class="cards-2 section-gray">
         <div class="container">
@@ -370,14 +310,11 @@
                   </a>
                 </div>
                 <div class="table">
-
                   <h4 class="card-caption">
                     <br>
                     <h2 class="font-weight-bold">Mission</h2>
                   </h4>
-
-
-                  <p class="card-description"> Multitasking team committed to continuously provide the most simple, easy
+ <p class="card-description"> Multitasking team committed to continuously provide the most simple, easy
                     and
                     Effective solutions everywhere, every time and every day</p>
                   <a class="action text-decoration-none" href="#">
@@ -398,13 +335,11 @@
                 <div class="table">
                   <br>
                   <h4 class="card-caption">
-
                     <h2 class="font-weight-bold">Goals</h2>
                   </h4>
                   <p class="card-description"> Our goals are to nurture a passion for lifelong
                     learning,technological innovation,and foster a community
                     where diverse solutions are provided.</p>
-
                   <a class="action text-decoration-none" href="#">
                     Find out more
                     <span aria-hidden="true">
@@ -419,14 +354,11 @@
       </div>
     </div>
     </section>
-
     <section>
     <div class="feed1 pb-4">
       <h1>What our client says</h1>
-     
     </div>
     <div class="feed">
-
       <div class="card">
         <div class="header">
           <div class="image"></div>
@@ -435,11 +367,9 @@
               <h6>Sarjan Construction Pvt. Ltd.<br>
                 Ahmedabad,GJ</h6>
             </div>
-
           </div>
         </div>
-
-        <p class="message">
+<p class="message">
           "I had a great experience working with Sevysis on the implementation of Resource management
  Software. We are very happy to buy this software also my working become fast and they
  provide complete training and post support for using this application
@@ -447,30 +377,24 @@
         </p>
         <p class="name">-Mr. Utsav Gaudani</p>
       </div>
-
       <div class="card">
         <div class="header">
-          <div class="image1"></div>
-          
+          <div class="image1"></div> 
           <div>
             <div class="stars">
               <h6>Kidszone English Medium School<br>
                 Akola,MH</h6>
-            </div>
-
+              </div>
           </div>
         </div>
-
         <p class="message">
          "Sevysis is our Trusted solution partner. We choose Sevysis for their simple outstanding
           account, Admin & Enquiry management solution services. Our collaboration with Sevysis has
           evolved in the lifetime Partnership.
-          I would recommend it to anyone looking for good and custom software."
-         
+          I would recommend it to anyone looking for good and custom software." 
         </p>
         <p class="name">-Mr. Yogesh Gawande</p>
       </div>
-
       <div class="card">
         <div class="header">
           <div class="image2"></div>
@@ -480,10 +404,8 @@
                 Akola, MH
                 </h6>
             </div>
-
           </div>
         </div>
-
         <p class="message">
           "The Sevysis team is highly collaborative, extremely responsive and generates polished,
           sophisticated finished software. We gain from Sevysis across the board support from web based tools, keys to a
@@ -496,39 +418,32 @@
     </section>
     <div class="container">
       <div class="row ">
-  
         <div class="col-sm-6 col-md-3 ">
           <div class="indicator1 bg-primary">
             <span class="indicator-value1" data-target="25">25+</span>
             <span class="indicator-label1">Customer Surveyed</span>
           </div>
         </div>
-
         <div class="col-sm-6 col-md-3">
           <div class="indicator1 bg-primary">
             <span class="indicator-value2" data-target="15">10</span>
             <span class="indicator-label1">Services Provided</span>
           </div>
         </div>
-
-
-        <div class="col-sm-6 col-md-3">
+ <div class="col-sm-6 col-md-3">
           <div class="indicator bg-primary">
             <span class="indicator-value" data-target="800"></span>
             <span class="indicator-label">Monthly Active Users</span>
           </div>
         </div>
-
         <div class="col-sm-6 col-md-3">
           <div class="indicator1 bg-primary">
             <span class="indicator-value3" data-target="20">20+</span>
             <span class="indicator-label1">Our Projects</span>
           </div>
         </div>
-      
       </div>
     </div>
-
     <footer class="bg-dark text-white pt-2 pb-1">
       <div class=" bg-dark text-center text-md-left">
         <div class="row text-center text-md-left">
@@ -537,63 +452,29 @@
               <a href="./index.html" style="text-decoration: none">
                 <strong class="text-warning">SEVYSIS</strong>
             </h5>
-
             <p>
               Sevysis is an IT services, consulting and business solutions organization that has been partnering with
               many of the businesses for the past few years. We believe innovation and collective knowledge can
-              transform all our futures with greater purpose.
-            </p>
-          </div>
-
+              transform all our futures with greater purpose.</p> </div>
           <div class="col-md-2 col-lg-5 col-xl-2 mx-auto mt-3">
             <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
               Technologies
             </h5>
-
-            <p>
-              <a class="text-white" style="text-decoration: none">Microsoft .NET</a>
-            </p>
-
-            <p>
-              <a class="text-white" style="text-decoration: none">Angular</a>
-            </p>
-
-            <p>
-              <a class="text-white" style="text-decoration: none">Java</a>
-            </p>
-
-            <p>
-              <a class="text-white" style="text-decoration: none">Flutter</a>
-            </p>
-    
-            <p>
-              <a class="text-white" style="text-decoration: none">MS SQL</a>
-            </p>
-
-            <p>
-              <a class="text-white" style="text-decoration: none">React</a>
-            </p>
-       
-          </div>
-
+            <p><a class="text-white" style="text-decoration: none">Microsoft .NET</a></p>
+             <p><a class="text-white" style="text-decoration: none">Angular</a></p>
+             <p><a class="text-white" style="text-decoration: none">Java</a> </p>
+             <p>  <a class="text-white" style="text-decoration: none">Flutter</a></p>
+            <p><a class="text-white" style="text-decoration: none">MS SQL</a> </p>
+ <p><a class="text-white" style="text-decoration: none">React</a> </p>
+ </div>
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
             <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
               Useful links
             </h5>
-
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#polModal">Privacy Policy</a>
-            </p>
-
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#disModal">Disclaimer</a>
-            </p>
-
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#termModal">Terms & Conditions</a>
-            </p>
+            <p> <a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#polModal">Privacy Policy</a> </p>
+            <p><a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#disModal">Disclaimer</a> </p>
+            <p><a href="#" class="text-white" style="text-decoration: none" data-toggle="modal" data-target="#termModal">Terms & Conditions</a> </p> 
           </div>
-
           <div class="modal fade" id="termModal" tabindex="-1" role="dialog" aria-labelledby="termModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -604,7 +485,6 @@
                   </button>
                 </div>
                 <div class="modal-bodyt">
-                 
                   <form class="term">
                     <div class="form-group">
                       <label class="Name text-dark font-weight-bold">Terms & Conditions:-</label>
@@ -644,9 +524,7 @@
               </div>
             </div>
           </div>
-
-          
-          <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel" aria-hidden="true">
+ <div class="modal fade" id="polModal" tabindex="-1" role="dialog" aria-labelledby="polModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-headerp">
@@ -656,7 +534,6 @@
                   </button>
                 </div>
                 <div class="modal-bodyp" id="modalBody">
-              
                   <form id="enquiryForm">
                     <div class="form-group">
                       <label class="Name text-dark font-weight-bold">Privacy policy:-</label>
@@ -700,10 +577,7 @@
               </div>
             </div>
           </div>
-          
-          
-          
-          <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel" aria-hidden="true">
+           <div class="modal fade" id="disModal" tabindex="-1" role="dialog" aria-labelledby="disModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-headerd">
@@ -740,8 +614,6 @@
                         or the property and rights of others.</p>
                     
                     </div>
-                    
-                  
                   </form>
                 </div>
               </div>
@@ -752,18 +624,11 @@
             <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
               Contact
             </h5>
-
             <p class="text-left"><i class="fas fa-home mr-2 "></i>Kharadi,
-              Pune-Nagar highway<p class="text-left pl-4">Pune-411014 MH</p>
-              </p>
-
+              Pune-Nagar highway<p class="text-left pl-4">Pune-411014 MH</p></p>
             <p><a class="ib-mob" href="mailto:hr@sevysis.com"><i class="fas fa-envelope mr-3"></i>
               hr@sevysis.in</a></p>
-
             <p><a class="ib-mob" href="tel:+91 9307317516"><i class="fas fa-phone mr-3"></i> +91 9307317516</a></p>
-
-
-
           </div>
 
         </div>
@@ -776,13 +641,10 @@
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item">
                   <a href="https://www.facebook.com/profile.php?id=61558176181227&mibextid=ZbWKwL" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
-                      class="fab fa-facebook-f"></i></a>
-                </li>
-            
+                      class="fab fa-facebook-f"></i></a></li>
                 <li class="list-inline-item">
                   <a href="https://www.instagram.com/sevysis?utm_source=qr&igsh=MXBwZWhwMmEyejZxZg==" class="btn-floating btn-sm text-white" style="font-size: 23px"><i
-                      class="fab fa-instagram"></i></a>
-                </li>
+                      class="fab fa-instagram"></i></a> </li>
                 <li class="list-inline-item">
                   <a href="https://www.linkedin.com/company/sevysis/" class="btn-floating btn-sm text-white"
                     style="font-size: 23px"><i class="fab fa-linkedin"></i></a>
@@ -795,24 +657,18 @@
             </div>
           </div>
         </div>
-
         <hr class="mb-0">
         <div class="row align-items-center">
           <div class="col-md-1 col-lg-5 pl-5 pt-1 p-1">
-
             <p>Copyright @2023 All rights reserved by:
-
-              <a href="./index.html" style="text-decoration: none">
+            <a href="./index.html" style="text-decoration: none">
                 <strong class="text-warning">SEVYSIS</strong>
               </a>
             </p>
           </div>
-
-
         </div>
       </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"></script>
@@ -820,17 +676,13 @@
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     <script src="../javascript/script.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>  
 </body>
-
 </html>
