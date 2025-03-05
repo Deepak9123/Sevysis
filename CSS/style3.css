@@ -1,40 +1,31 @@
-/*
-* Prefixed by:
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
-
-
 * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
-    background-image: 
-    url(zoro1.jpeg);
-  background-image: 
-    url(zoro1.jpeg);
-  background-image: 
-    url(zoro1.jpeg);
+    background-image:
+        url(zoro1.jpeg);
+    background-image:
+        url(zoro1.jpeg);
+    background-image:
+        url(zoro1.jpeg);
     background-position: center;
     background-size: cover;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .container {
@@ -42,8 +33,8 @@ body {
     min-height: 400px;
     background: #FFF;
     border-radius: 5px;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
-            box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
     padding: 40px 30px;
 }
 
@@ -56,13 +47,14 @@ body {
     display: block;
     text-transform: capitalize;
 }
+
 .input-group-append {
     position: absolute;
     cursor: pointer;
     right: 38.5%;
     top: 45.5%;
     border-radius: 9px;
-  }
+}
 
 .container .login-social {
     display: -ms-grid;
@@ -75,8 +67,8 @@ body {
     padding: 12px;
     margin: 10px;
     border-radius: 3px;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
-            box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
     text-decoration: none;
     font-size: 1rem;
     text-align: center;
@@ -142,12 +134,15 @@ body {
     transition: .3s;
 }
 
-.container .login-email .input-group input:focus, .container .login-email .input-group input:valid {
+.container .login-email .input-group input:focus,
+.container .login-email .input-group input:valid {
     border-color: #a29bfe;
 }
-.submit-btn{
+
+.submit-btn {
     margin-bottom: 20px;
 }
+
 .submit-btn input {
     display: block;
     width: 100%;
@@ -164,16 +159,17 @@ body {
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
-  }
-  
-  .submit-btn input:hover {
-      -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-              transform: translateY(-5px);
-      background: #6c5ce7;
-  }
-  form input,
-  form select {
+}
+
+.submit-btn input:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+
+form input,
+form select {
     height: 45px;
     padding: 10px;
     width: 100%;
@@ -182,26 +178,36 @@ body {
     background: #fff;
     border-radius: 3px;
     border: 1px solid #bfbfbf;
-  }
-  
-  form input:focus,
-  form select:focus {
+}
+
+form input:focus,
+form select:focus {
     border-color: #9a9a9a;
-  }
-  
-  form input.error,
-  form select.error {
+}
+
+form input.error,
+form select.error {
     border-color: #f91919;
     background: #f9f0f1;
-  }
-  
-  form small {
+}
+
+form small {
     font-size: 14px;
     margin-top: 5px;
     display: block;
     color: #f91919;
-  }
+}
 
+.enquiry-wrapper {
+    position: absolute;
+    right: 45px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.nav {
+    position: relative;
+}
 
 .login-register-text {
     color: #111;
@@ -218,9 +224,11 @@ body {
     .container {
         width: 300px;
     }
+
     .container .login-social {
         display: block;
     }
+
     .container .login-social a {
         display: block;
     }

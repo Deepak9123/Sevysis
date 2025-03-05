@@ -1,26 +1,19 @@
-/*
-* Prefixed by:
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: 
+  background-image:
     url(zoro1.jpeg);
-  background-image: 
+  background-image:
     url(zoro1.jpeg);
-  background-image: 
+  background-image:
     url(zoro1.jpeg);
   background-position: center;
   background-size: cover;
@@ -28,35 +21,37 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
+
 .go1 button {
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- padding-top: 5px;
- padding-left: 13px;
- background-color: #7e76eb;
- position: absolute;
- color: #fff;
- width: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 5px;
+  padding-left: 13px;
+  background-color: #7e76eb;
+  position: absolute;
+  color: #fff;
+  width: 8%;
   top: 3%;
-left: 90%;
-border-radius: 6px;
+  left: 90%;
+  border-radius: 6px;
   font-size: 20px;
   height: 7%;
 }
+
 .container {
   width: 400px;
   min-height: 400px;
   background: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 40px 30px;
 }
 
@@ -122,18 +117,19 @@ border-radius: 6px;
 }
 
 .submit-btn input:hover {
-    -webkit-transform: translateY(-5px);
-        -ms-transform: translateY(-5px);
-            transform: translateY(-5px);
-    background: #6c5ce7;
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  background: #6c5ce7;
 }
 
 .container .login-username .input-group .btn:hover {
   -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-          transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
   background: hwb(247 43% 16%);
 }
+
 form input,
 form select {
   height: 45px;
@@ -176,6 +172,7 @@ form small {
 .forget a {
   color: #6c5ce7;
 }
+
 .register {
   width: 100%;
   text-align: center;
@@ -188,6 +185,7 @@ form small {
 .reg a {
   color: #6c5ce7;
 }
+
 @media (max-width: 430px) {
   .container {
     width: 300px;
