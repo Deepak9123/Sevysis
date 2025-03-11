@@ -126,7 +126,7 @@ nav {
   max-height: 250px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 10px;
+  padding: 10px; 
 }
 
 .dropdown-menu .dropdown-item-text {
@@ -1026,9 +1026,7 @@ nav a:hover::before {
   display: block;
   font-size: 1em;
 }
-
-a.ib-mob,
-a.ib-mob:hover {
+a.ib-mob, a.ib-mob:hover {
   color: unset;
   text-decoration: none;
 }
