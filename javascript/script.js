@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var dropdown = document.querySelector('.dropdown');
   var dropdownMenu = document.querySelector('.dropdown-menu');
 
-  dropdown.addEventListener('click', function(event) {
+  dropdown.addEventListener('click', function (event) {
     event.stopPropagation();
     dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
   });
 
-  document.addEventListener('click', function() {
+  document.addEventListener('click', function () {
     dropdownMenu.style.display = 'none';
   });
 });
@@ -19,26 +19,26 @@ const msg = document.getElementById('message');
 const number = document.getElementById('phone');
 const displayError = (inputField, errorMessage) => {
 
-    let errorElement = inputField.parentElement.querySelector('.error-text');
-    if (!errorElement) {
-     
-        errorElement = document.createElement("div");
-        errorElement.classList.add("error-text");
-        inputField.parentElement.appendChild(errorElement);
-    }
-  
-    errorElement.textContent = errorMessage;
-    errorElement.style.color = "red";
-    inputField.style.borderColor = "red";
+  let errorElement = inputField.parentElement.querySelector('.error-text');
+  if (!errorElement) {
+
+    errorElement = document.createElement("div");
+    errorElement.classList.add("error-text");
+    inputField.parentElement.appendChild(errorElement);
+  }
+
+  errorElement.textContent = errorMessage;
+  errorElement.style.color = "red";
+  inputField.style.borderColor = "red";
 };
 
 
 const clearErrors = () => {
-    document.querySelectorAll('.error-text').forEach(errorText => {
-        errorText.textContent = '';
-    });
-    const inputFields = [fullname, email, subject, msg];
-    inputFields.forEach(field => field.style.borderColor = "");
+  document.querySelectorAll('.error-text').forEach(errorText => {
+    errorText.textContent = '';
+  });
+  const inputFields = [fullname, email, subject, msg];
+  inputFields.forEach(field => field.style.borderColor = "");
 };
 
 
@@ -46,80 +46,80 @@ const clearErrors = () => {
 const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 function sendEmail() {
-    clearErrors(); 
+  clearErrors();
 
 
-    let valid = true;
-    if (!fullname.value.trim()) {
-        displayError(fullname, "Name is required.");
-        valid = false;
-    }
-    if (!email.value.trim()) {
-        displayError(email, "Email is required.");
-        valid = false;
-    } else if (!emailRegex.test(email.value.trim())) {
-        displayError(email, "Please enter a valid email address.");
-        valid = false;
-    }
-    if (!number.value.trim()) {
-        displayError(number, "Invalid number.");
-        valid = false;
-    }
-    if (!subject.value.trim()) {
-        displayError(subject, "Subject is required.");
-        valid = false;
-    }
-    if (!msg.value.trim()) {
-        displayError(msg, "Message is required.");
-        valid = false;
-    }
-   
-    if (valid) {
-        const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}<br> Number: ${number.value}
+  let valid = true;
+  if (!fullname.value.trim()) {
+    displayError(fullname, "Name is required.");
+    valid = false;
+  }
+  if (!email.value.trim()) {
+    displayError(email, "Email is required.");
+    valid = false;
+  } else if (!emailRegex.test(email.value.trim())) {
+    displayError(email, "Please enter a valid email address.");
+    valid = false;
+  }
+  if (!number.value.trim()) {
+    displayError(number, "Invalid number.");
+    valid = false;
+  }
+  if (!subject.value.trim()) {
+    displayError(subject, "Subject is required.");
+    valid = false;
+  }
+  if (!msg.value.trim()) {
+    displayError(msg, "Message is required.");
+    valid = false;
+  }
+
+  if (valid) {
+    const bodyMessage = `Name: ${fullname.value} <br> Email: ${email.value}<br> Number: ${number.value}
         <br> Subject: ${subject.value} <br> Message: ${msg.value}`;
-        
-        
-       
-        Email.send({
-            SecureToken : "4b985981-407c-4986-b5f6-735991b38e12",
-            Password: "F5F3E1ACEB858FED658D2FBBF82892D76D36",
-            Authentication: true,
-            auth: {
-                user: 'prathamesh.184054@gmail.com',
-                pass: 'F5F3E1ACEB858FED658D2FBBF82892D76D36'
-              },
-            DMARC: true,
-            To: 'prathamesh.184054@gmail.com',
-            From: "prathamesh.184054@gmail.com",
-            Port: 2525 ,
-            secure: true,
-            isTransactional: true,
-            spam:false,
-            ReplyTo: email.value, 
-            Subject: subject.value,
-            Body: bodyMessage
-        })
-    }
-    };
-    
-    
-  
-    document.getElementById('enquiryForm').addEventListener("submit", (e) => {
-        e.preventDefault();
-        sendEmail();
-    
-      
-        document.getElementById('enquiryForm').reset();
-    });
+
+
+
+    Email.send({
+      SecureToken: "4b985981-407c-4986-b5f6-735991b38e12",
+      Password: "F5F3E1ACEB858FED658D2FBBF82892D76D36",
+      Authentication: true,
+      auth: {
+        user: 'prathamesh.184054@gmail.com',
+        pass: 'F5F3E1ACEB858FED658D2FBBF82892D76D36'
+      },
+      DMARC: true,
+      To: 'prathamesh.184054@gmail.com',
+      From: "prathamesh.184054@gmail.com",
+      Port: 2525,
+      secure: true,
+      isTransactional: true,
+      spam: false,
+      ReplyTo: email.value,
+      Subject: subject.value,
+      Body: bodyMessage
+    })
+  }
+};
+
+
+
+document.getElementById('enquiryForm').addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendEmail();
+
+
+  document.getElementById('enquiryForm').reset();
+});
 
 
 function displayContent() {
-    document.body.style.display = 'block';
+  document.body.style.display = 'block';
 }
 
 
 function logout() {
-    window.location.href = 'login.html';
+  window.location.href = 'login.html';
 }
 
 
@@ -141,9 +141,9 @@ const responses = {
   "do you offer customization options": "Yes",
   "what features does [product/service] have": " We Have a lot of innovative feature as well as skilled team ready for customization as per your requirement",
   "do you offer any discounts or promotions": "Please, go with the enquiry form. Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-  "do you have any packages or bundles available":"Please, go with the enquiry form and mention your query.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
-  "can I upgrade my service plan":"Yes",
-  ".Do you offer any add-on services or features":"Yes",
+  "do you have any packages or bundles available": "Please, go with the enquiry form and mention your query.Our expert will contact you soon <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
+  "can I upgrade my service plan": "Yes",
+  ".Do you offer any add-on services or features": "Yes",
   "can you provide a tutorial or user manual": "Once service delivered, our expert team will contact you soon and team will give manual kit"
 };
 
@@ -155,13 +155,13 @@ const suggestionQuestions = [
   "Do you have any technical issues?",
   "Do you provide international service?",
   "Do you offer customization options?",
-  
+
 ];
 
 document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
 document.getElementById('close-btn').addEventListener('click', toggleChatbot);
 document.getElementById('send-btn').addEventListener('click', sendMessage);
-document.getElementById('user-input').addEventListener('keypress', function(e) {
+document.getElementById('user-input').addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
     sendMessage();
   }
@@ -179,7 +179,7 @@ function sendMessage() {
   const userInput = document.getElementById('user-input').value.trim();
   if (userInput !== '') {
     appendMessage('user', userInput);
-    respondToUser(userInput.toLowerCase()|| userInput.toUpperCase());
+    respondToUser(userInput.toLowerCase() || userInput.toUpperCase());
     document.getElementById('user-input').value = '';
   }
 }
@@ -187,7 +187,7 @@ function sendMessage() {
 
 function respondToUser(userInput) {
   const response = responses[userInput] || "I'm sorry, I didn't get that! If you need any help, reach out to us through <a href='#' onclick='openEnquiryModal()'>this link</a>.";
-  setTimeout(function() {
+  setTimeout(function () {
     appendMessage('bot', response);
   }, 500);
 }
@@ -206,12 +206,12 @@ function appendMessage(sender, message) {
 
 function populateSuggestions() {
   const suggestionsContainer = document.getElementById('suggestions-container');
-  suggestionsContainer.innerHTML = ''; 
+  suggestionsContainer.innerHTML = '';
   suggestionQuestions.forEach(question => {
     const suggestionElement = document.createElement('div');
     suggestionElement.classList.add('suggestion');
     suggestionElement.textContent = question;
-    suggestionElement.onclick = function() {
+    suggestionElement.onclick = function () {
       handleSuggestionClick(question);
     };
     suggestionsContainer.appendChild(suggestionElement);
@@ -228,7 +228,7 @@ function handleSuggestionClick(question) {
     "Do you have any technical issues?": " Please, go with the enquiry form. Our expert will contact you soon 🧐 <a href='#' onclick='openEnquiryModal();return false;'>Enquire here</a>",
     "Do you provide international service?": "Yes",
     "Do you offer customization options?": "Yes"
-   
+
   };
   const response = suggestionResponses[question];
   appendMessage('bot', response);
@@ -237,37 +237,37 @@ function handleSuggestionClick(question) {
 
 
 function openEnquiryModal() {
-  
+
   $('#enquiryModal').modal('show');
 }
 
 
 function closeEnquiryModal() {
-  
+
   $('#enquiryModal').modal('hide');
 }
 
 
-document.getElementById('enquiryForm').addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
-  
+document.getElementById('enquiryForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+
   document.getElementById('spinner').style.display = 'block';
-  
-  
-  setTimeout(function() {
-    
+
+
+  setTimeout(function () {
+
     document.getElementById('spinner').style.display = 'none';
-    
-    
+
+
     appendMessage('bot', 'Thank you for your enquiry. We will get back to you shortly.');
-    
-    
+
+
     closeEnquiryModal();
-    
-    
+
+
     document.getElementById('enquiryForm').reset();
-  }, 2000); 
+  }, 2000);
 });
 
 
@@ -278,13 +278,13 @@ document.querySelector('#enquiryModal .close').addEventListener('click', closeEn
 function appendDefaultResponseButtons(chatBox) {
   const buttonYes = document.createElement('button');
   buttonYes.textContent = '✔ Yes';
-  buttonYes.onclick = function() {
+  buttonYes.onclick = function () {
     appendMessage('bot', responses["expert"]);
   };
 
   const buttonNo = document.createElement('button');
   buttonNo.textContent = '✖ No';
-  buttonNo.onclick = function() {
+  buttonNo.onclick = function () {
     appendMessage('bot', responses["no"]);
   };
 
@@ -295,40 +295,40 @@ function appendDefaultResponseButtons(chatBox) {
   chatBox.appendChild(buttonContainer);
 }
 
-  
-  
+
+
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.indicator-value');
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        let c = +counter.innerText;
-  
-        const increment = target / 20000; 
-  
-        if(c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`;
-            setTimeout(updateCounter, 50); 
-        } else {
-            counter.innerText = '0'; 
-            setTimeout(updateCounter, 50); 
-        }
-      };
-      updateCounter();
-    });
+  const counters = document.querySelectorAll('.indicator-value');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      let c = +counter.innerText;
+
+      const increment = target / 20000;
+
+      if (c < target) {
+        counter.innerText = `${Math.ceil(c + increment)}`;
+        setTimeout(updateCounter, 50);
+      } else {
+        counter.innerText = '0';
+        setTimeout(updateCounter, 50);
+      }
+    };
+    updateCounter();
   });
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    
-    document.getElementById('countrySelect').addEventListener('change', function() {
-        var selectedOption = this.options[this.selectedIndex];
-        var flagClass = selectedOption.dataset.countryFlag;
-        var countryCode = selectedOption.value;
-        var flagElement = document.getElementById('selected-flag');
-        flagElement.className = 'flag-icon ' + flagClass;
-        document.getElementById('countryCode').value = countryCode;
-    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.getElementById('countrySelect').addEventListener('change', function () {
+    var selectedOption = this.options[this.selectedIndex];
+    var flagClass = selectedOption.dataset.countryFlag;
+    var countryCode = selectedOption.value;
+    var flagElement = document.getElementById('selected-flag');
+    flagElement.className = 'flag-icon ' + flagClass;
+    document.getElementById('countryCode').value = countryCode;
+  });
 });

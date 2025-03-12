@@ -95,13 +95,6 @@ nav {
   height: 50px;
 }
 
-.enquiry-wrapper {
-  /* position: absolute;
-  padding-right: 175px;
-  top: 20%; 
-  transform: translateY(-50%); */
-}
-
 .enquiry-wrapper .enq a {
   text-decoration: none;
 }
@@ -119,20 +112,29 @@ nav {
 }
 
 .dropdown-menu {
-  display: none;
+  /* display: none;
   position: absolute;
   background-color: #fff;
   width: 350px;
   max-height: 250px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 10px; 
+  padding: 10px;
+  width: 400px; */
+  position: fixed;
+  width: 201.5%;
+  height: 350%;
+  border-radius: 10px;
+  position: absolute;
 }
+
 
 .dropdown-menu .dropdown-item-text {
   color: #000;
   padding: 8px 16px;
   display: block;
+  line-height: 1.2;
+
 }
 
 .dropdown-menu .dropdown-item-text:hover {
@@ -1026,7 +1028,9 @@ nav a:hover::before {
   display: block;
   font-size: 1em;
 }
-a.ib-mob, a.ib-mob:hover {
+
+a.ib-mob,
+a.ib-mob:hover {
   color: unset;
   text-decoration: none;
 }
@@ -1074,10 +1078,18 @@ a.ib-mob, a.ib-mob:hover {
     width: 467px;
   }
 
-  .dropdown {
-    display: flex;
-    padding: 3px;
+  .dropdown-menu {
+    padding: 5px 10px;
+    /* Adjust the padding */
+    min-width: 150px;
+    /* Adjust the width */
+  }
 
+  .dropdown-menu li {
+    padding: 5px 8px;
+    /* Reduce item padding */
+    font-size: 14px;
+    /* Reduce text size */
   }
 
   .feed .header .image {

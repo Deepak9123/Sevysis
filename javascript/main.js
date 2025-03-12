@@ -53,6 +53,6 @@ passToggleBtn.addEventListener('click', () => {
 
 form.addEventListener("submit", processFormData);
 
-document.getElementById('Goback').addEventListener('click', function() {
+document.getElementById('Goback').addEventListener('click', function () {
     window.location.href = 'user.html'; // Replace 'login.html' with the actual login page URL
 });
